@@ -16,6 +16,9 @@ import javax.swing.Icon;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JFileChooser;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 
 /**
  * The application's main frame.
@@ -92,9 +95,24 @@ public class BillTrackerView extends FrameView {
         if(chooser.showOpenDialog(mainPanel) == JFileChooser.APPROVE_OPTION){
             // The user has hit the 'OK' button
             String filename = chooser.getSelectedFile().getName();
-            /**
-             * Do something here!
-             */
+            try
+            {
+              Scanner sc = new Scanner(new File(filename));
+              while(sc.hasNext())
+                {
+                    String currentLine = sc.nextLine();
+                    System.out.println(currentLine);
+
+                }
+            }
+            catch(java.io.FileNotFoundException exception)
+            {
+                System.out.println("Invalid filename");
+                System.out.println(exception);
+            }
+
+
+
         }
     }
 
