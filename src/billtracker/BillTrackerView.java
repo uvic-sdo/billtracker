@@ -4,6 +4,7 @@
 
 package billtracker;
 
+import billtracker.BillTrackerTransaction;
 import org.jdesktop.application.Action;
 import org.jdesktop.application.ResourceMap;
 import org.jdesktop.application.SingleFrameApplication;
